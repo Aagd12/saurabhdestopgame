@@ -1,0 +1,242 @@
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        body {
+            box-sizing: border-box;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: url('./background.jpg') no-repeat center;
+            z-index: -1;
+            background-size: cover;
+            overflow: hidden;
+        }
+        
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .duck1 {
+            position: absolute;
+            top: -100;
+            left: -40px;
+            animation: fly1 10s linear 2s infinite;
+            background: url('./duck1.jpg') no-repeat center;
+            width: 40px;
+            height: 40px;
+            cursor: url('./Aim.jpg'), text;
+            background-size: cover;
+        }
+        
+        .duck2 {
+            position: absolute;
+            top: -100;
+            left: -40px;
+            width: 40px;
+            height: 40px;
+            animation: fly2 10s linear 4s infinite;
+            background: url('./duck1.jpg')no-repeat center;
+            background-size: cover;
+            cursor: url('./Aim.jpg'), text;
+        }
+        
+        .duck3 {
+            position: absolute;
+            top: -100;
+            left: -40px;
+            width: 40px;
+            height: 40px;
+            background: url('./duck1.jpg')no-repeat center;
+            background-size: cover;
+            animation: fly3 10s linear 6s infinite;
+            cursor: url('./Aim.jpg'), text;
+        }
+        
+        .duck4 {
+            position: absolute;
+            top: -100;
+            left: -40px;
+            width: 40px;
+            height: 40px;
+            background: url('./duck1.jpg')no-repeat center;
+            background-size: cover;
+            animation: fly4 10s linear 8s infinite;
+            cursor: url('./Aim.jpg'), text;
+        }
+        
+        .duck5 {
+            position: absolute;
+            top: -100;
+            left: -40px;
+            width: 40px;
+            height: 40px;
+            background: url('./duck1.jpg')no-repeat center;
+            background-size: cover;
+            animation: fly5 10s linear 10s infinite;
+            cursor: url('./Aim.jpg'), text;
+        }
+        
+        @keyframes fly1 {
+            0% {
+                top: 360px;
+                left: -70px;
+            }
+            25% {
+                top: 150px;
+                left: 20%;
+            }
+            50% {
+                /* top: 250px; */
+                left: 40%
+            }
+            75% {
+                top: 150px;
+                left: 60%;
+            }
+            100% {
+                /* top: 360px; */
+                left: 100%;
+            }
+        }
+        
+        @keyframes fly2 {
+            0% {
+                top: 360px;
+                left: -70px;
+            }
+            25% {
+                top: 150px;
+                left: 20%;
+            }
+            50% {
+                /* top: 250px; */
+                left: 40%
+            }
+            75% {
+                top: 150px;
+                left: 60%;
+            }
+            100% {
+                top: 360px;
+                left: 100%;
+            }
+        }
+        
+        @keyframes fly3 {
+            0% {
+                top: 360px;
+                left: -70px;
+            }
+            25% {
+                top: 150px;
+                left: 20%;
+            }
+            50% {
+                top: 250px;
+                left: 40%
+            }
+            75% {
+                top: 150px;
+                left: 60%;
+            }
+            100% {
+                top: 360px;
+                left: 100%;
+            }
+        }
+        
+        @keyframes fly4 {
+            0% {
+                top: 360px;
+                left: -70px;
+            }
+            25% {
+                top: 150px;
+                left: 20%;
+            }
+            50% {
+                top: 250px;
+                left: 40%
+            }
+            75% {
+                top: 150px;
+                left: 60%;
+            }
+            100% {
+                top: 360px;
+                left: 100%;
+            }
+        }
+        
+        @keyframes fly5 {
+            0% {
+                top: 360px;
+                left: -70px;
+                transition-delay: 20s;
+            }
+            25% {
+                top: 150px;
+                left: 20%;
+            }
+            50% {
+                top: 250px;
+                left: 40%
+            }
+            75% {
+                top: 150px;
+                left: 60%;
+            }
+            100% {
+                top: 360px;
+                left: 100%;
+            }
+        }
+        
+        input {
+            position: absolute;
+            top: -400px;
+        }
+        
+        .score {
+            position: absolute;
+            width: 100vw;
+            height: 150px;
+            background-color: antiquewhite;
+            bottom: 35px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .score::before {
+            content: 'Score :';
+            display: inline-block;
+        }
+        
+        .score::after {
+            content: counter(score);
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        input:checked {
+            counter-increment: score;
+        }
+        
+        input:checked+label {
+            display: none;
+            opacity: 0;
+            z-index: -7;
+        }
