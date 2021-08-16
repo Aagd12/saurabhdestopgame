@@ -16,24 +16,37 @@
             z-index: -1;
             background-size: cover;
             overflow: hidden;
+            counter-reset: Score;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
         }
         
         .form {
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100vw;
+            height: 100vh;
         }
         
         .duck1 {
             position: absolute;
             top: -100;
             left: -40px;
-            animation: fly1 10s linear 2s infinite;
+            animation: fly1 15s linear 2s infinite;
             background: url('./duck1.jpg') no-repeat center;
             width: 40px;
             height: 40px;
             cursor: url('./Aim.jpg'), text;
             background-size: cover;
+            border-radius: 50%;
         }
         
         .duck2 {
@@ -42,10 +55,11 @@
             left: -40px;
             width: 40px;
             height: 40px;
-            animation: fly2 10s linear 4s infinite;
-            background: url('./duck1.jpg')no-repeat center;
+            animation: fly2 15s linear 4s infinite;
+            background: url('./duck2.jpg') no-repeat center;
             background-size: cover;
             cursor: url('./Aim.jpg'), text;
+            border-radius: 50%;
         }
         
         .duck3 {
@@ -54,10 +68,11 @@
             left: -40px;
             width: 40px;
             height: 40px;
-            background: url('./duck1.jpg')no-repeat center;
+            background: url('./duck3.jpg') no-repeat center;
             background-size: cover;
-            animation: fly3 10s linear 6s infinite;
+            animation: fly3 15s linear 6s infinite;
             cursor: url('./Aim.jpg'), text;
+            border-radius: 50%;
         }
         
         .duck4 {
@@ -66,10 +81,11 @@
             left: -40px;
             width: 40px;
             height: 40px;
-            background: url('./duck1.jpg')no-repeat center;
+            background: url('./duck4.jpg') no-repeat center;
             background-size: cover;
-            animation: fly4 10s linear 8s infinite;
+            animation: fly4 15s linear 9s infinite;
             cursor: url('./Aim.jpg'), text;
+            border-radius: 50%;
         }
         
         .duck5 {
@@ -78,10 +94,11 @@
             left: -40px;
             width: 40px;
             height: 40px;
-            background: url('./duck1.jpg')no-repeat center;
+            background: url('./duck5.jpg') no-repeat center;
             background-size: cover;
-            animation: fly5 10s linear 10s infinite;
+            animation: fly5 15s linear 12s infinite;
             cursor: url('./Aim.jpg'), text;
+            border-radius: 50%;
         }
         
         @keyframes fly1 {
@@ -89,20 +106,20 @@
                 top: 360px;
                 left: -70px;
             }
-            25% {
+            15% {
                 top: 150px;
-                left: 20%;
+                left: 15%;
             }
             50% {
-                /* top: 250px; */
+                top: 360px;
                 left: 40%
             }
             75% {
-                top: 150px;
+                top: 120px;
                 left: 60%;
             }
             100% {
-                /* top: 360px; */
+                top: 360px;
                 left: 100%;
             }
         }
@@ -112,16 +129,16 @@
                 top: 360px;
                 left: -70px;
             }
-            25% {
+            15% {
                 top: 150px;
-                left: 20%;
+                left: 15%;
             }
             50% {
-                /* top: 250px; */
+                top: 350px;
                 left: 40%
             }
             75% {
-                top: 150px;
+                top: 120px;
                 left: 60%;
             }
             100% {
@@ -135,16 +152,16 @@
                 top: 360px;
                 left: -70px;
             }
-            25% {
+            15% {
                 top: 150px;
-                left: 20%;
+                left: 15%;
             }
             50% {
-                top: 250px;
+                top: 330px;
                 left: 40%
             }
             75% {
-                top: 150px;
+                top: 140px;
                 left: 60%;
             }
             100% {
@@ -158,12 +175,12 @@
                 top: 360px;
                 left: -70px;
             }
-            25% {
+            15% {
                 top: 150px;
-                left: 20%;
+                left: 15%;
             }
             50% {
-                top: 250px;
+                top: 350px;
                 left: 40%
             }
             75% {
@@ -180,29 +197,28 @@
             0% {
                 top: 360px;
                 left: -70px;
-                transition-delay: 20s;
             }
-            25% {
+            15% {
                 top: 150px;
-                left: 20%;
+                left: 15%;
             }
             50% {
-                top: 250px;
+                top: 360px;
                 left: 40%
             }
             75% {
-                top: 150px;
+                top: 135px;
                 left: 60%;
             }
             100% {
-                top: 360px;
+                top: 340px;
                 left: 100%;
             }
         }
         
         input {
             position: absolute;
-            top: -400px;
+            top: -300px;
         }
         
         .score {
@@ -216,27 +232,25 @@
             display: flex;
             justify-content: center;
             font-size: 25px;
-            font-weight: bold;
             z-index: 2;
+            font-weight: bold;
         }
         
         .score::before {
             content: 'Score :';
+            position: absolute;
             display: inline-block;
         }
         
         .score::after {
-            content: counter(score);
+            content: counter(Score);
+            position: absolute;
             display: inline-block;
-            margin-right: 10px;
-        }
-        
-        input:checked {
-            counter-increment: score;
+            margin-left: 100px;
         }
         
         input:checked+label {
-            display: none;
             opacity: 0;
             z-index: -7;
+            counter-increment: Score;
         }
