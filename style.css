@@ -27,6 +27,16 @@
             height: 100vh;
             flex-direction: column;
         }
+           li {
+            list-style: none;
+            font-size: 25px;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        h1 {
+            font-style: italic;
+        }
         
         .form {
             display: flex;
