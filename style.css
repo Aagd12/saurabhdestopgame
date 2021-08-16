@@ -50,7 +50,7 @@
             position: absolute;
             top: -100;
             left: -40px;
-            animation: fly1 15s linear 2s infinite;
+            animation: fly1 var(--animation-time) linear 2s infinite;
             background: url('./duck1.jpg') no-repeat center;
             width: 40px;
             height: 40px;
@@ -80,7 +80,7 @@
             height: 40px;
             background: url('./duck3.jpg') no-repeat center;
             background-size: cover;
-            animation: fly3 15s linear 6s infinite;
+            animation: fly3 var(--animation-time) linear 6s infinite;
             cursor: url('./Aim.jpg'), text;
             border-radius: 50%;
         }
